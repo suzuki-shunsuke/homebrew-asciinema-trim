@@ -5,21 +5,21 @@
 class AsciinemaTrim < Formula
   desc "Trim asciinema's record file"
   homepage "https://github.com/suzuki-shunsuke/asciinema-trim"
-  version "0.1.1"
+  version "0.1.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.1/asciinema-trim_darwin_arm64.tar.gz"
-      sha256 "be8a18e3a96e23ab0e56aea41cc1bfa3af7f0906d0e6f6d0703f18261729369f"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.2/asciinema-trim_darwin_arm64.tar.gz"
+      sha256 "2128587018a60bf32c324f31657d87dd700db129bfca2892153292e03a87675a"
 
       def install
         bin.install "asciinema-trim"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.1/asciinema-trim_darwin_amd64.tar.gz"
-      sha256 "ee6d9d87d5387d2abc11306ef2cd557ffd6071a47b6abb0723d5a32fa81e6f84"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.2/asciinema-trim_darwin_amd64.tar.gz"
+      sha256 "684cd48ac125f2d932cb1ec7b76c84a2c33b1aa7a6474c13a1c91a711d2e0ec7"
 
       def install
         bin.install "asciinema-trim"
@@ -28,25 +28,17 @@ class AsciinemaTrim < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.1/asciinema-trim_linux_arm.tar.gz"
-      sha256 "a86129179e373706d9ec3abb9a7f913af07577ea1ddbff73058cc80e9d990d18"
-
-      def install
-        bin.install "asciinema-trim"
-      end
-    end
     if Hardware::CPU.intel?
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.1/asciinema-trim_linux_amd64.tar.gz"
-      sha256 "21e726c77610d85fbfaf1cbc36c89802389853087814b8df7ca5aab79b8fdc20"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.2/asciinema-trim_linux_amd64.tar.gz"
+      sha256 "dd3889051e0d0833c0959ac21761938fbf889a994d78a29fc2a942c3ee6d766c"
 
       def install
         bin.install "asciinema-trim"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.1/asciinema-trim_linux_arm64.tar.gz"
-      sha256 "34c6ef06413a283fec6c337f4037d70a899dc60a0a11446a553f8adef383dcc6"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.2/asciinema-trim_linux_arm64.tar.gz"
+      sha256 "5bf790368b3bccd98ad5a3f48b8eb43379e839d782cd6453f88496c2259a1c97"
 
       def install
         bin.install "asciinema-trim"
