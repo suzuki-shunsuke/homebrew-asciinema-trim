@@ -2,7 +2,7 @@
 cask "asciinema-trim" do
   desc "Trim asciinema's record file"
   homepage "https://github.com/suzuki-shunsuke/asciinema-trim"
-  version "0.1.4"
+  version "0.1.5"
 
   livecheck do
     skip "Auto-generated on release."
@@ -12,23 +12,29 @@ cask "asciinema-trim" do
 
   on_macos do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.4/asciinema-trim_darwin_amd64.tar.gz"
-      sha256 "fc56d45b38fcb8fd7f6b9a19428e507be4078c011816885046bba2035271f1d3"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.5/asciinema-trim_darwin_amd64.tar.gz"
+      sha256 "cfd6e94ba9ca1acaa2d315e3bccdc309bf98290597f5548b52df3dd2be219788"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.4/asciinema-trim_darwin_arm64.tar.gz"
-      sha256 "c0ca4b8205028f75dceab80f2c65c55f7828db98b101f84107de4250d265592a"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.5/asciinema-trim_darwin_arm64.tar.gz"
+      sha256 "091f6e2a60c979a763ef406105d83dfdca5e6374a0cf258cba8fb11608cfad7b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.4/asciinema-trim_linux_amd64.tar.gz"
-      sha256 "72e4b003fef3bc3ab00c1a346494d11d0fb93b1bda649fb9e60bdb13d8c3da4d"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.5/asciinema-trim_linux_amd64.tar.gz"
+      sha256 "3770336da37a7df46ab8382bf4baf666e7e85dd908ed3d44607249fabbcb4577"
     end
     on_arm do
-      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.4/asciinema-trim_linux_arm64.tar.gz"
-      sha256 "ba5d261865e88810df931534715805446aa0a467b64e96adbff98475b49f86f5"
+      url "https://github.com/suzuki-shunsuke/asciinema-trim/releases/download/v0.1.5/asciinema-trim_linux_arm64.tar.gz"
+      sha256 "c30d176b67ac795f1011ae03e5005127dc7b6e9a6ae9ff60a73a539d5a304dc6"
+    end
+  end
+
+  postflight do
+    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/asciinema-trim"]
     end
   end
 
